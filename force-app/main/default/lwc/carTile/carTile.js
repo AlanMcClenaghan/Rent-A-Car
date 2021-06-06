@@ -1,4 +1,6 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
+import { CurrentPageReference } from 'lightning/navigation';
+import { fireEvent } from 'c/pubsub';
 
 const TILE_WRAPPER_SELECTED_CLASS = "tile-wrapper selected"
 const TILE_WRAPPER_UNSELECTED_CLASS = "tile-wrapper"
@@ -7,6 +9,8 @@ export default class CarTile extends LightningElement {
 
     @api car;
     @api carSelectedId;
+
+    @wire(CurrentPageReference) pageRef;
 
     get backgroundStyle() {
         return `background-image: url(${this.car.Picture__c})`;
@@ -28,6 +32,8 @@ export default class CarTile extends LightningElement {
         );
         // Fire the event from c-car-tile
         this.dispatchEvent(carSelect);
+
+        fireEvent(this.pageRef, 'carselect', this.car.Id);
       }
 
       get tileClass() {
