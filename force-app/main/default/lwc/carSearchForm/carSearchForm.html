@@ -1,0 +1,24 @@
+<template>
+    <lightning-layout>
+      <lightning-layout-item class="slds-align-middle">
+        <lightning-combobox class="slds-align-middle"
+                            name="carTypes"
+                            label="Car Types"
+                            value={selectedValue}
+                            placeholder="All Types"
+                            options={searchOptions}
+                            variant="label-hidden"
+                            onchange={handleCarTypeChange}>
+        </lightning-combobox>
+      </lightning-layout-item>
+      <lightning-layout-item class="slds-align-middle">
+        <lightning-button
+            variant="brand-outline" 
+            label="New"
+            onclick={createNewCarType} 
+            class="slds-m-left_x-small">
+        </lightning-button>
+      </lightning-layout-item>
+    </lightning-layout>
+  </template>
+  

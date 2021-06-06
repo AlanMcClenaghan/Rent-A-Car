@@ -1,0 +1,13 @@
+<template>
+    <lightning-layout multiple-rows>
+      <!-- Top -->
+      <lightning-layout-item size="12">
+        <lightning-card title="Find a Car">
+          <p class="slds-var-p-horizontal_small slds-align_absolute-center">
+            <!-- carSearchForm component goes here -->
+            <c-car-search-form onsearch={searchCars}></c-car-search-form>
+          </p>
+        </lightning-card>
+      </lightning-layout-item>
+    </lightning-layout>
+  </template>
