@@ -8,6 +8,12 @@
             <c-car-search-form onsearch={searchCars}></c-car-search-form>
           </p>
         </lightning-card>
+        <lightning-card title="Matching Cars">
+          <p class="slds-var-p-horizontal_small slds-align_absolute-center">
+            <!-- carSearchResults goes here -->
+            <c-car-search-results car-type-id={carTypeId}></c-car-search-results>
+          </p>
+        </lightning-card>
       </lightning-layout-item>
     </lightning-layout>
   </template>
