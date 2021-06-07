@@ -5,7 +5,7 @@ import { showToastEvent } from 'lightning/platformShowToastEvent';
 export default class CarSearchResults extends LightningElement {
     @api carTypeId;
 
-    @track cars;
+    @track cars = [];
     @track selectedCarId;
 
     @wire(getCars, {carTypeId : '$carTypeId'})
@@ -18,7 +18,7 @@ export default class CarSearchResults extends LightningElement {
     }
 
     get carsFound() {
-        if (this.cars) {
+        if (this.cars.length > 0) {
             return true;
         }
         return false;

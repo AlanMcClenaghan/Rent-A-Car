@@ -29,7 +29,7 @@ const fields = [
 
 export default class CarDetails extends LightningElement {
 
-    carId;
+    @track carId;
     @track selectedTabValue;
     
     @wire(CurrentPageReference) pageRef;
@@ -51,6 +51,15 @@ export default class CarDetails extends LightningElement {
 
     tabChangeHandler(event){
         this.selectedTabValue = event.target.value;
+    }
+
+    experienceAddedHandler(){
+        const carExperienceComponent = this.template.querySelector('c-car-experiences');
+        if(carExperienceComponent){
+            carExperienceComponent.getCarExperiences();
+        }
+
+        this.selectedTabValue = 'viewexperience';
     }
 
     get carFound(){
