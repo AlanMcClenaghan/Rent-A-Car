@@ -33,7 +33,7 @@ export default class CarTile extends LightningElement {
         // Fire the event from c-car-tile
         this.dispatchEvent(carSelect);
 
-        fireEvent(this.pageRef, 'carselect', this.car.Id);
+        fireEvent(this.pageRef, 'carselect', this.car);
       }
 
       get tileClass() {

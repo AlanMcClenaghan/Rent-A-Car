@@ -42,7 +42,7 @@ export default class CarDetails extends LightningElement {
     }
 
     callBackMethod(payload){
-        this.carId = payload;
+        this.carId = payload.Id;
     }
 
     disconnectedCallback(){
